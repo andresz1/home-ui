@@ -1,15 +1,11 @@
 {
-  "name": "@acme/ui",
+  "name": "@adv-re/button",
   "version": "0.0.0",
   "sideEffects": false,
   "license": "MIT",
-  "exports": {
-    "./button": {
-      "types": "./src/button.tsx",
-      "import": "./dist/button.mjs",
-      "require": "./dist/button.js"
-    }
-  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -17,11 +13,11 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
+    "@adv-re/eslint-config": "*",
+    "@adv-re/typescript-config": "*",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "eslint": "^8.57.0",
-    "@repo/typescript-config": "*",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"
   },

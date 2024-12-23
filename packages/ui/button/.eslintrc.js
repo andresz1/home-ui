@@ -1,4 +1,4 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["@adv-re/eslint-config/storybook.js"],
+  extends: ["@adv-re/eslint-config/react.js"],
 };

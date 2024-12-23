@@ -32,4 +32,7 @@ module.exports = {
     },
   },
   ignorePatterns: ["node_modules/", "dist/"],
+  rules: {
+    "import/no-default-export": "off",
+  },
 };

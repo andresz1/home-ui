@@ -1,0 +1,28 @@
+{
+  "name": "@adv-re/tailwind-plugin",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint . --max-warnings 0",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@adv-re/eslint-config": "*",
+    "@adv-re/typescript-config": "*",
+    "@types/mertasan__tailwindcss-variables": "^2.6.4",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
+    "typescript": "5.5.4"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  },
+  "dependencies": {
+    "@mertasan/tailwindcss-variables": "^2.7.0"
+  }
+}

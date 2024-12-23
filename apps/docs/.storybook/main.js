@@ -22,6 +22,11 @@ const config = {
     return {
       ...config,
       define: { "process.env": {} },
+      css: {
+        postcss: {
+          plugins: [require("tailwindcss"), require("autoprefixer")],
+        },
+      },
       resolve: {
         alias: [
           {
