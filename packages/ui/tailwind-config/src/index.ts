@@ -137,104 +137,154 @@ const custom = plugin.withOptions(
           none: "none",
         },
         colors: {
-          surface: {
-            DEFAULT: "var(--colors-surface)",
-            inverse: "var(--colors-surface-inverse)",
-            outline: "var(--colors-surface-outline)",
-            overlay: "var(--colors-surface-overlay)",
+          basic: {
+            DEFAULT: "var(--colors-basic)",
+            hovered: "var(--colors-basic-hovered)",
+            container: {
+              DEFAULT: "var(--colors-basic-container)",
+              hovered: "var(--colors-basic-container-hovered)",
+            },
+          },
+          accent: {
+            DEFAULT: "var(--colors-accent)",
+            hovered: "var(--colors-accent-hovered)",
+            container: {
+              DEFAULT: "var(--colors-accent-container)",
+              hovered: "var(--colors-accent-container-hovered)",
+            },
+            variant: {
+              DEFAULT: "var(--colors-accent-variant)",
+              hovered: "var(--colors-accent-variant-hovered)",
+            },
           },
           main: {
             DEFAULT: "var(--colors-main)",
             hovered: "var(--colors-main-hovered)",
-            pressed: "var(--colors-main-pressed)",
-            focused: "var(--colors-main-focused)",
-            disabled: "var(--colors-main-disabled)",
             container: {
               DEFAULT: "var(--colors-main-container)",
               hovered: "var(--colors-main-container-hovered)",
-              pressed: "var(--colors-main-container-pressed)",
-              focused: "var(--colors-main-container-focused)",
-              disabled: "var(--colors-main-container-disabled)",
             },
             variant: {
               DEFAULT: "var(--colors-main-variant)",
               hovered: "var(--colors-main-variant-hovered)",
-              pressed: "var(--colors-main-variant-pressed)",
-              focused: "var(--colors-main-variant-focused)",
-              disabled: "var(--colors-main-variant-disabled)",
             },
           },
-          secondary: {
-            DEFAULT: "var(--colors-secondary)",
-            container: "var(--colors-secondary-container)",
-            variant: "var(--colors-secondary-variant)",
-            inverse: "var(--colors-secondary-inverse)",
-          },
-          accent: {
-            DEFAULT: "var(--colors-accent)",
-            container: "var(--colors-accent-container)",
-            variant: "var(--colors-accent-variant)",
-            inverse: "var(--colors-accent-inverse)",
+          support: {
+            DEFAULT: "var(--colors-support)",
+            hovered: "var(--colors-support-hovered)",
+            container: {
+              DEFAULT: "var(--colors-support-container)",
+              hovered: "var(--colors-support-container-hovered)",
+            },
+            variant: {
+              DEFAULT: "var(--colors-support-variant)",
+              hovered: "var(--colors-support-variant-hovered)",
+            },
           },
           success: {
             DEFAULT: "var(--colors-success)",
-            container: "var(--colors-success-container)",
-            variant: "var(--colors-success-variant)",
-            inverse: "var(--colors-success-inverse)",
+            hovered: "var(--colors-success-hovered)",
+            container: {
+              DEFAULT: "var(--colors-success-container)",
+              hovered: "var(--colors-success-container-hovered)",
+            },
           },
           alert: {
             DEFAULT: "var(--colors-alert)",
-            container: "var(--colors-alert-container)",
-            variant: "var(--colors-alert-variant)",
-            inverse: "var(--colors-alert-inverse)",
+            hovered: "var(--colors-alert-hovered)",
+            container: {
+              DEFAULT: "var(--colors-alert-container)",
+              hovered: "var(--colors-alert-container-hovered)",
+            },
           },
           error: {
             DEFAULT: "var(--colors-error)",
-            container: "var(--colors-error-container)",
-            variant: "var(--colors-error-variant)",
-            inverse: "var(--colors-error-inverse)",
+            hovered: "var(--colors-error-hovered)",
+            container: {
+              DEFAULT: "var(--colors-error-container)",
+              hovered: "var(--colors-error-container-hovered)",
+            },
+          },
+          info: {
+            DEFAULT: "var(--colors-info)",
+            hovered: "var(--colors-info-hovered)",
+            container: {
+              DEFAULT: "var(--colors-info-container)",
+              hovered: "var(--colors-info-container-hovered)",
+            },
+          },
+          neutral: {
+            DEFAULT: "var(--colors-neutral)",
+            hovered: "var(--colors-neutral-hovered)",
+            container: {
+              DEFAULT: "var(--colors-neutral-container)",
+              hovered: "var(--colors-neutral-container-hovered)",
+            },
+          },
+          background: {
+            DEFAULT: "var(--colors-background)",
+            variant: "var(--colors-background-variant)",
+          },
+          surface: {
+            DEFAULT: "var(--colors-surface)",
+            hovered: "var(--colors-surface-hovered)",
+            inverse: {
+              DEFAULT: "var(--colors-surface-inverse)",
+              hovered: "var(--colors-surface-inverse-hovered)",
+            },
+          },
+          overlay: {
+            DEFAULT: "var(--colors-overlay)",
           },
           on: {
-            surface: {
-              DEFAULT: "var(--colors-on-surface)",
-              inverse: "var(--colors-on-surface-inverse)",
-              overlay: "var(--colors-on-surface-overlay)",
-            },
-            primary: {
-              DEFAULT: "var(--colors-on-primary)",
-              container: "var(--colors-on-primary-container)",
-              variant: "var(--colors-on-primary-variant)",
-              inverse: "var(--colors-on-primary-inverse)",
-            },
-            secondary: {
-              DEFAULT: "var(--colors-on-secondary)",
-              container: "var(--colors-on-secondary-container)",
-              variant: "var(--colors-on-secondary-variant)",
-              inverse: "var(--colors-on-secondary-inverse)",
-            },
             accent: {
               DEFAULT: "var(--colors-on-accent)",
               container: "var(--colors-on-accent-container)",
               variant: "var(--colors-on-accent-variant)",
-              inverse: "var(--colors-on-accent-inverse)",
+            },
+            basic: {
+              DEFAULT: "var(--colors-on-basic)",
+              container: "var(--colors-on-basic-container)",
+            },
+            main: {
+              DEFAULT: "var(--colors-on-main)",
+              container: "var(--colors-on-main-container)",
+              variant: "var(--colors-on-main-variant)",
+            },
+            support: {
+              DEFAULT: "var(--colors-on-support)",
+              container: "var(--colors-on-support-container)",
+              variant: "var(--colors-on-support-variant)",
             },
             success: {
               DEFAULT: "var(--colors-on-success)",
               container: "var(--colors-on-success-container)",
-              variant: "var(--colors-on-success-variant)",
-              inverse: "var(--colors-on-success-inverse)",
             },
             alert: {
               DEFAULT: "var(--colors-on-alert)",
               container: "var(--colors-on-alert-container)",
-              variant: "var(--colors-on-alert-variant)",
-              inverse: "var(--colors-on-alert-inverse)",
             },
             error: {
               DEFAULT: "var(--colors-on-error)",
               container: "var(--colors-on-error-container)",
-              variant: "var(--colors-on-error-variant)",
-              inverse: "var(--colors-on-error-inverse)",
+            },
+            info: {
+              DEFAULT: "var(--colors-on-info)",
+              container: "var(--colors-on-info-container)",
+            },
+            background: {
+              DEFAULT: "var(--colors-on-background)",
+              variant: "var(--colors-on-background-variant)",
+            },
+            surface: {
+              DEFAULT: "var(--colors-on-background)",
+              inverse: {
+                DEFAULT: "var(--colors-on-surface-inverse)",
+                hovered: "var(--colors-on-surface-inverse-hovered)",
+              },
+            },
+            overlay: {
+              DEFAULT: "var(--colors-on-overlay)",
             },
           },
         },
