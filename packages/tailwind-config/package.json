@@ -9,20 +9,27 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
+    "test": "jest",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "jest": {
+    "preset": "@adv-re/jest-presets/node",
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!hex-rgb)"
+    ]
+  },
+  "dependencies": {
+    "hex-rgb": "^5.0.0"
   },
   "devDependencies": {
     "@adv-re/eslint-config": "*",
     "@adv-re/typescript-config": "*",
-    "@types/mertasan__tailwindcss-variables": "^2.6.4",
+    "@adv-re/jest-presets": "*",
     "eslint": "^8.57.0",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"
   },
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
-  },
-  "dependencies": {
-    "@mertasan/tailwindcss-variables": "^2.7.0"
   }
 }
