@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
-import { CSSVariablesSizingExtractor } from "./css-variables-sizing-extractor";
-import { TailwindSizingParser } from "./tailwind-sizing-parser";
+import { SizingVariablesExtractor } from "./sizing-variables-extractor";
+import { SizingParser } from "./sizing-parser";
 
 const sizes = [
   0, 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80,
@@ -9,34 +9,25 @@ const sizes = [
   864,
 ];
 
-const sizingPlugin = plugin.withOptions(
+export const sizingPlugin = plugin.withOptions(
   () =>
     ({ addBase }) => {
-      const parser = new CSSVariablesSizingExtractor();
+      const parser = new SizingVariablesExtractor();
 
       addBase({
         ":root": parser.extract(sizes),
       });
     },
   () => {
-    const parser = new TailwindSizingParser();
+    const parser = new SizingParser();
     const values = parser.parse(sizes);
 
     return {
       theme: {
         extend: {
-          width: values,
-          maxWidth: values,
-          minWidth: values,
-          height: values,
-          maxHeight: values,
-          minHeight: values,
-          translate: values,
-          size: values,
+          ...values,
         },
       },
     };
   }
 );
-
-export default sizingPlugin;

@@ -1,4 +1,4 @@
-import plugins from "@adv-re/tailwind-plugin";
+import { theme } from "@adv-re/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,5 +10,10 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [...plugins],
+  plugins: [
+    ...require("@adv-re/tailwind-plugin")({
+      htmlFontSize: 16,
+      themes: { default: theme },
+    }),
+  ],
 };

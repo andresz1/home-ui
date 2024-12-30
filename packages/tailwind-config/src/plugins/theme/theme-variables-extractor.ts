@@ -6,7 +6,7 @@ import {
 } from "../../utilities/string";
 import { isHex, isRem } from "../../utilities/validation";
 
-export class CSSVariablesExtractor {
+export class ThemeVariablesExtractor {
   htmlFontSize: number;
 
   constructor({ htmlFontSize = 16 }: { htmlFontSize?: number } = {}) {
@@ -30,10 +30,10 @@ export class CSSVariablesExtractor {
     return value;
   }
 
-  private traverse(theme: object, path: string[] = []) {
+  private traverse(node: object, path: string[] = []) {
     let variables: Record<string, string> = {};
 
-    Object.entries(theme).forEach(([keyParam, value]) => {
+    Object.entries(node).forEach(([keyParam, value]) => {
       if (typeof value === "string" || typeof value === "number") {
         const propertyPath = toCSSPropertyPath(keyParam, path);
         const name = toCSSVariableName(propertyPath);
@@ -51,7 +51,15 @@ export class CSSVariablesExtractor {
     return variables;
   }
 
-  extract(theme: object) {
-    return this.traverse(theme);
+  extract(node: object, source: Record<string, string> = {}) {
+    const variables = this.traverse(node);
+
+    return Object.keys(variables).reduce<Record<string, string>>((acc, key) => {
+      if (source[key] === variables[key]) {
+        return acc;
+      }
+
+      return { ...acc, [key]: variables[key] };
+    }, {});
   }
 }

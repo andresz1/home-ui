@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 
-const utilitiesPlugin = plugin.withOptions(() => ({ addUtilities }) => {
+export const utilitiesPlugin = plugin.withOptions(() => ({ addUtilities }) => {
   addUtilities({
     ".u-current-font-size": {
       width: "1em",
@@ -12,5 +12,3 @@ const utilitiesPlugin = plugin.withOptions(() => ({ addUtilities }) => {
     },
   });
 });
-
-export default utilitiesPlugin;

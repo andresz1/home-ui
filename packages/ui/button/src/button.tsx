@@ -6,7 +6,7 @@ export interface ButtonProps
 export function Button({ children, ...other }: ButtonProps): JSX.Element {
   return (
     <button
-      className="bg-main px-lg py-md rounded-full text-on-main text-body-1 hover:bg-main-hovered focus-visible:ring ring-offset-2 outline-none"
+      className="bg-support px-lg py-md rounded-full text-on-main t text-body-1 hover:bg-support-hovered focus-visible:ring ring-offset-2 outline-none"
       type="button"
       {...other}
     >

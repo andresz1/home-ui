@@ -1,6 +1,6 @@
-import { CSSVariablesExtractor } from "../src/plugins/theme/css-variables-extractor";
+import { ThemeVariablesExtractor } from "../src/plugins/theme/theme-variables-extractor";
 
-describe("CSSVariablesExtractor", () => {
+describe("ThemeVariablesExtractor", () => {
   it("should correctly extract CSS variables from a theme object with string and number values", () => {
     const theme = {
       primary: "#ff5733",
@@ -11,7 +11,7 @@ describe("CSSVariablesExtractor", () => {
       },
     };
 
-    const extractor = new CSSVariablesExtractor({ htmlFontSize: 16 });
+    const extractor = new ThemeVariablesExtractor({ htmlFontSize: 16 });
     const result = extractor.extract(theme);
 
     expect(result).toEqual({
@@ -34,7 +34,7 @@ describe("CSSVariablesExtractor", () => {
       },
     };
 
-    const extractor = new CSSVariablesExtractor({ htmlFontSize: 16 });
+    const extractor = new ThemeVariablesExtractor({ htmlFontSize: 16 });
     const result = extractor.extract(theme);
 
     expect(result).toEqual({
@@ -50,7 +50,7 @@ describe("CSSVariablesExtractor", () => {
       base: "2rem", // Pixels
     };
 
-    const extractor = new CSSVariablesExtractor();
+    const extractor = new ThemeVariablesExtractor();
     const result = extractor.extract(theme);
 
     expect(result).toEqual({
@@ -61,7 +61,7 @@ describe("CSSVariablesExtractor", () => {
   it("should return an empty object for an empty theme", () => {
     const theme = {};
 
-    const extractor = new CSSVariablesExtractor({ htmlFontSize: 16 });
+    const extractor = new ThemeVariablesExtractor({ htmlFontSize: 16 });
     const result = extractor.extract(theme);
 
     expect(result).toEqual({});

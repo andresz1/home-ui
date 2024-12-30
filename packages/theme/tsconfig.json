@@ -1,0 +1,6 @@
+{
+    "extends": "@adv-re/typescript-config/library.json",
+    "include": ["."],
+    "exclude": ["dist", "build", "node_modules"]
+  }
+  

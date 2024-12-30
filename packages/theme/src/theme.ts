@@ -1,4 +1,8 @@
-export interface FontSize {
+type DeepPartial<T> = {
+  [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
+};
+
+export interface ThemeFontSize {
   fontSize: string;
   lineHeight: string;
   fontWeight?: string;
@@ -111,26 +115,26 @@ export interface Theme {
     mono: string;
   };
   fontSize: {
-    display1: FontSize;
-    display1Expanded: FontSize;
-    display2: FontSize;
-    display2Expanded: FontSize;
-    display3: FontSize;
-    display3Expanded: FontSize;
-    headline1: FontSize;
-    headline1Expanded: FontSize;
-    headline2: FontSize;
-    headline2Expanded: FontSize;
-    subhead: FontSize;
-    subheadExpanded: FontSize;
-    body1: FontSize;
-    body2: FontSize;
-    caption: FontSize;
-    small: FontSize;
-    body1Link: FontSize;
-    body2Link: FontSize;
-    captionLink: FontSize;
-    callout: FontSize;
+    display1: ThemeFontSize;
+    display1Expanded: ThemeFontSize;
+    display2: ThemeFontSize;
+    display2Expanded: ThemeFontSize;
+    display3: ThemeFontSize;
+    display3Expanded: ThemeFontSize;
+    headline1: ThemeFontSize;
+    headline1Expanded: ThemeFontSize;
+    headline2: ThemeFontSize;
+    headline2Expanded: ThemeFontSize;
+    subhead: ThemeFontSize;
+    subheadExpanded: ThemeFontSize;
+    body1: ThemeFontSize;
+    body2: ThemeFontSize;
+    caption: ThemeFontSize;
+    small: ThemeFontSize;
+    body1Link: ThemeFontSize;
+    body2Link: ThemeFontSize;
+    captionLink: ThemeFontSize;
+    callout: ThemeFontSize;
   };
   fontWeight: {
     regular: string;
@@ -177,3 +181,5 @@ export interface Theme {
     tooltip: string;
   };
 }
+
+export type PartialTheme = DeepPartial<Theme>;

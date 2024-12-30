@@ -1,5 +1,5 @@
 {
-  "name": "@adv-re/tailwind-plugin",
+  "name": "@adv-re/theme",
   "version": "0.0.0",
   "private": true,
   "main": "dist/index.js",
@@ -13,26 +13,17 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "jest": {
-    "preset": "@adv-re/jest-presets/node",
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!hex-rgb)"
-    ]
-  },
-  "dependencies": {
-    "hex-rgb": "^5.0.0"
+    "preset": "@adv-re/jest-presets/node"
   },
   "devDependencies": {
     "@adv-re/eslint-config": "*",
-    "@adv-re/jest-presets": "*",
-    "@adv-re/theme": "*",
     "@adv-re/typescript-config": "*",
-    "@types/node": "^22.10.2",
+    "@adv-re/jest-presets": "*",
     "eslint": "^8.57.0",
-    "postcss": "^8.4.49",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"
   },
-  "peerDependencies": {
-    "tailwindcss": "^3.0.0"
+  "dependencies": {
+    "deepmerge": "^4.3.1"
   }
 }

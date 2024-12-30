@@ -1,3 +1,4 @@
+import type { Theme } from "@adv-re/theme";
 import {
   toCSSVariable,
   toCSSPropertyPath,
@@ -5,9 +6,7 @@ import {
 } from "../../utilities/string";
 import { isHex } from "../../utilities/validation";
 
-type ThemeObject = Record<string, string | number>;
-
-export class TailwindThemeParser {
+export class ThemeParser {
   private parseValue(key: string, value: string | number) {
     const variable = toCSSVariable(key);
 
@@ -51,13 +50,13 @@ export class TailwindThemeParser {
         return;
       }
 
-      result[key] = this.traverse(value as ThemeObject, [...path, keyParam]);
+      result[key] = this.traverse(value as object, [...path, keyParam]);
     });
 
     return result;
   }
 
-  parse(theme: object) {
+  parse(theme: Theme) {
     return this.traverse(theme);
   }
 }

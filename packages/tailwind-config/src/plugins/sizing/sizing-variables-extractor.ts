@@ -1,6 +1,6 @@
 import { pxToRem } from "../../utilities/string";
 
-export class CSSVariablesSizingExtractor {
+export class SizingVariablesExtractor {
   htmlFontSize: number;
 
   constructor({ htmlFontSize = 16 }: { htmlFontSize?: number } = {}) {

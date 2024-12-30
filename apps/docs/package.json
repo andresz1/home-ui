@@ -19,6 +19,7 @@
     "@adv-re/eslint-config": "*",
     "@adv-re/typescript-config": "*",
     "@adv-re/tailwind-plugin": "*",
+    "@adv-re/theme": "*",
     "@storybook/addon-actions": "^8.2.6",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/addon-links": "^8.2.6",

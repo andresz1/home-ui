@@ -1,5 +1,16 @@
-import sizingPlugin from "./plugins/sizing";
-import themePlugin from "./plugins/theme";
-import utilitiesPlugin from "./plugins/utilities";
+import type { ThemePluginOptions } from "./plugins";
+import { themePlugin, utilitiesPlugin, sizingPlugin } from "./plugins";
 
-export default [themePlugin({}), sizingPlugin({}), utilitiesPlugin({})];
+export type PluginOptions = ThemePluginOptions;
+
+const plugin = ({ htmlFontSize, themes }: PluginOptions) => {
+  return [
+    themePlugin({ htmlFontSize, themes }),
+    sizingPlugin({}),
+    utilitiesPlugin({}),
+  ];
+};
+
+export * from "./plugins";
+
+export default plugin;
