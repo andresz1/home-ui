@@ -3,7 +3,7 @@ import postcss from "postcss";
 import type { Config } from "tailwindcss";
 import tailwindcss from "tailwindcss";
 import { theme } from "@adv-re/theme";
-import { themePlugin } from "../src/plugins/theme";
+import { sizingPlugin, themePlugin } from "../src";
 
 const html = String.raw;
 
@@ -82,6 +82,37 @@ describe("plugins", () => {
             line-height: var(--font-size-display--1-line-height);
             letter-spacing: var(--font-size-display--1-letter-spacing);
             font-weight: var(--font-size-display--1-font-weight)
+        }"
+      `);
+    });
+  });
+
+  describe("sizing", () => {
+    it("should add css variables", async () => {
+      const config = {
+        plugins: [sizingPlugin({})],
+      };
+
+      const { css } = await run(config, "@tailwind base");
+
+      expect(css).toMatchSnapshot();
+    });
+
+    it("should add classes", async () => {
+      const config = {
+        plugins: [sizingPlugin({})],
+        content: [
+          {
+            raw: html`<div class="w-sz-6" /> `,
+          },
+        ],
+      };
+
+      const { css } = await run(config, "@tailwind utilities");
+
+      expect(css).toMatchInlineSnapshot(`
+        ".w-sz-6 {
+            width: var(--sz-6)
         }"
       `);
     });
