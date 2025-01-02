@@ -5,7 +5,7 @@ module.exports = {
   content: [
     "./.storybook/**/*.{js,ts,jsx,tsx,mdx}",
     "./stories/**/*.{js,ts,jsx,tsx,mdx}",
-    "../../packages/ui/**/*/dist/**/*.{js,mjs}",
+    "../../packages/ui/dist/**/*.{js,mjs}",
   ],
   theme: {
     extend: {},
