@@ -21,11 +21,7 @@ type Story = StoryObj<typeof Button>;
  * to learn how to use render functions.
  */
 export const Primary: Story = {
-  render: (props) => (
-    <div className="text-surface-inverse text-display1">
-      <Button>Hellox</Button>
-    </div>
-  ),
+  render: (props) => <Button>Hellox</Button>,
   name: "Button",
   args: {
     children: "Hello",

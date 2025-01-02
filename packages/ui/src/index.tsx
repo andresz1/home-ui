@@ -1,2 +1,3 @@
-export * from "./core/core";
-export * from "./button/button";
+export * from "./core";
+export * from "./button";
+export * from "./tabs";

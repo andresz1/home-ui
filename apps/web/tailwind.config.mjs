@@ -1,5 +1,6 @@
 import { theme } from "@adv-re/theme";
 import plugins from "@adv-re/tailwind-plugin";
+import typography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -17,6 +18,7 @@ const config = {
       htmlFontSize: 16,
       themes: { default: theme },
     }),
+    typography,
   ],
 };
 

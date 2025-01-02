@@ -5,7 +5,7 @@ export interface ButtonProps
   children: React.ReactNode;
 }
 
-export function Button({ children, ...other }: ButtonProps): JSX.Element {
+export function Button({ children, ...other }: ButtonProps) {
   return (
     <button
       className={cn(
