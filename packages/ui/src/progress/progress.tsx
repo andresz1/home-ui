@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Progress as ProgressPrimitive,
   ProgressProps as ProgressPrimitiveProps,

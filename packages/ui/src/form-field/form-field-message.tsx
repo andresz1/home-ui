@@ -1,3 +1,5 @@
+"use client";
+
 import { ComponentPropsWithoutRef, forwardRef, useEffect, useId } from "react";
 
 import { cn } from "../core";
