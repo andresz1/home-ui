@@ -1,7 +1,8 @@
-import plugin from "tailwindcss/plugin";
 import { type PartialTheme, type Theme } from "@adv-re/theme";
-import { ThemeVariablesExtractor } from "./theme-variables-extractor";
+import plugin from "tailwindcss/plugin";
+
 import { ThemeParser } from "./theme-parser";
+import { ThemeVariablesExtractor } from "./theme-variables-extractor";
 
 export interface ThemePluginOptions {
   htmlFontSize?: number;

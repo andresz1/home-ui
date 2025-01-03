@@ -4,7 +4,7 @@ import { extendTailwindMerge } from "tailwind-merge";
 
 export const twMerge = extendTailwindMerge({});
 
-export { cva } from "class-variance-authority";
+export { cva, type VariantProps } from "class-variance-authority";
 
 export const cn = (...inputs: ClassValue[]) => {
   return cx(inputs);

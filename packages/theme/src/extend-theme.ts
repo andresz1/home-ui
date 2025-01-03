@@ -1,4 +1,5 @@
 import deepmerge from "deepmerge";
+
 import type { PartialTheme, Theme } from "./theme";
 import { theme } from "./themes/default-theme";
 

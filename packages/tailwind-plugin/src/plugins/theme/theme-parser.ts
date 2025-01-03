@@ -1,7 +1,8 @@
 import type { Theme } from "@adv-re/theme";
+
 import {
-  toCSSVariable,
   toCSSPropertyPath,
+  toCSSVariable,
   toKebabCase,
 } from "../../utilities/string";
 import { isHex } from "../../utilities/validation";
@@ -33,7 +34,7 @@ export class ThemeParser {
   }
 
   private traverse(node: object, path: string[] = []) {
-    const result: Record<string, any> = {};
+    const result: Record<string, unknown> = {};
 
     Object.entries(node).forEach(([keyParam, value]) => {
       const [parentKey] = [...path].reverse();

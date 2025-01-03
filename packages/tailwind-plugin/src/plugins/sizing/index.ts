@@ -1,6 +1,7 @@
 import plugin from "tailwindcss/plugin";
-import { SizingVariablesExtractor } from "./sizing-variables-extractor";
+
 import { SizingParser } from "./sizing-parser";
+import { SizingVariablesExtractor } from "./sizing-variables-extractor";
 
 const sizes = [
   0, 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80,

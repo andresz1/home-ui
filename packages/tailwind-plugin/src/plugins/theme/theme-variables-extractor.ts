@@ -1,8 +1,8 @@
 import {
+  hexToRgb,
+  normalizeRem,
   toCSSPropertyPath,
   toCSSVariableName,
-  normalizeRem,
-  hexToRgb,
 } from "../../utilities/string";
 import { isHex, isRem } from "../../utilities/validation";
 
