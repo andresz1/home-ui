@@ -4,6 +4,11 @@
   "sideEffects": false,
   "license": "MIT",
   "exports": {
+    "./slot": {
+      "types": "./dist/slot/index.d.ts",
+      "import": "./dist/slot/index.mjs",
+      "require": "./dist/slot/index.js"
+    },
     "./button": {
       "types": "./dist/button/index.d.ts",
       "import": "./dist/button/index.mjs",
@@ -28,6 +33,11 @@
       "types": "./dist/progress/index.d.ts",
       "import": "./dist/progress/index.mjs",
       "require": "./dist/progress/index.js"
+    },
+    "./form-field": {
+      "types": "./dist/form-field/index.d.ts",
+      "import": "./dist/form-field/index.mjs",
+      "require": "./dist/form-field/index.js"
     },
     "./theme": {
       "types": "./dist/theme/index.d.ts",
