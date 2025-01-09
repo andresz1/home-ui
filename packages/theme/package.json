@@ -9,7 +9,6 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
-    "test": "jest",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "jest": {
@@ -19,6 +18,7 @@
     "@adv-re/eslint-config": "*",
     "@adv-re/typescript-config": "*",
     "@adv-re/jest-presets": "*",
+    "jest": "^29.7.0",
     "eslint": "^8.57.0",
     "tsup": "^8.0.2",
     "typescript": "5.5.4"

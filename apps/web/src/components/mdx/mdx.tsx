@@ -1,37 +1,18 @@
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
-import React, { ComponentPropsWithoutRef } from "react";
+import React from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import { highlight } from "sugar-high";
+
 import { CodeEditor } from "./code-editor";
-import { Button } from "@adv-re/ui/button";
+import { Code } from "./code";
+import { PropsTable } from "./props-table";
 
-interface CodeProps extends ComponentPropsWithoutRef<"code"> {}
-
-const Code = ({ children, className, ...props }: CodeProps) => {
-  if (!className) {
-    return (
-      <code
-        className="font-mono text-muted-foreground"
-        dangerouslySetInnerHTML={{ __html: children as string }}
-        {...props}
-      />
-    );
-  }
-
-  const html = highlight(children as string);
-
-  return (
-    <code
-      className={className}
-      dangerouslySetInnerHTML={{ __html: html }}
-      {...props}
-    />
-  );
+const components = {
+  code: Code,
+  CodeEditor,
+  PropsTable,
 };
-
-const components = { code: Code, CodeEditor, Button };
 
 export type MDXProps = MDXRemoteProps;
 

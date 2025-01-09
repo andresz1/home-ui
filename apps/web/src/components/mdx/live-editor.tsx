@@ -4,8 +4,8 @@ import { VariantProps, cva } from "class-variance-authority";
 import { ComponentProps } from "react";
 import { LiveEditor as LiveEditorPrimitive } from "react-live";
 
-const liveEditorVariants = cva(
-  "min-h-full overflow-auto bg-[#1E1E1E] p-lg [&>*]:!p-none font-monospace rounded-md",
+const style = cva(
+  "min-h-full overflow-auto bg-[#1E1E1E] p-lg [&>*]:!p-none font-mono rounded-md",
   {
     variants: {
       size: {
@@ -24,13 +24,10 @@ const liveEditorVariants = cva(
 
 export interface LiveEditorProps
   extends ComponentProps<typeof LiveEditorPrimitive>,
-    VariantProps<typeof liveEditorVariants> {}
+    VariantProps<typeof style> {}
 
 export const LiveEditor = ({ className, size, ...others }: LiveEditorProps) => {
   return (
-    <LiveEditorPrimitive
-      className={liveEditorVariants({ className, size })}
-      {...others}
-    />
+    <LiveEditorPrimitive className={style({ className, size })} {...others} />
   );
 };

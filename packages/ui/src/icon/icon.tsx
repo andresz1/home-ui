@@ -1,7 +1,8 @@
-import { cva, VariantProps } from "../core";
 import { Children, cloneElement, ComponentPropsWithoutRef } from "react";
 
-export const iconStyles = cva(["fill-current shrink-0"], {
+import { cva, VariantProps } from "../core";
+
+const iconStyles = cva(["fill-current shrink-0"], {
   variants: {
     intent: {
       current: ["text-current"],
@@ -33,7 +34,7 @@ export interface IconProps
   /**
    * The svg icon that will be wrapped
    */
-  children: React.ReactElement;
+  children: React.ReactElement<SVGElement>;
   /**
    * The accessible label for the icon. This label will be visually hidden but announced to screen
    * reader users, similar to `alt` text for `img` tags.
@@ -49,7 +50,7 @@ export const Icon = ({
   children,
   ...others
 }: IconProps) => {
-  const child = Children.only(children) as React.ReactElement<any>;
+  const child = Children.only(children) as React.ReactElement<SVGElement>;
 
   return (
     <>
@@ -58,7 +59,7 @@ export const Icon = ({
         "aria-hidden": "true",
         focusable: "false",
         ...others,
-      })}
+      } as Partial<SVGElement>)}
 
       {label && <div className="sr-only">{label}</div>}
     </>

@@ -3,11 +3,15 @@
 import { ComponentProps } from "react";
 import { LiveProvider } from "react-live";
 import { themes } from "prism-react-renderer";
+import { Button } from "@adv-re/ui/button";
+import { Tabs, TabsList, TabsContent, TabsTrigger } from "@adv-re/ui/tabs";
+import { Icon } from "@adv-re/ui/icon";
+import { IconButton } from "@adv-re/ui/icon-button";
+import * as icons from "react-icons/fi";
 
 import { LivePreview } from "./live-preview";
 import { LiveEditor, LiveEditorProps } from "./live-editor";
-import { Button } from "@adv-re/ui/button";
-import { Tabs, TabsList, TabsContent, TabsTrigger } from "@adv-re/ui/tabs";
+import { CodeCopyButton } from "./code-copy-button";
 
 export interface CodeEditorProps
   extends ComponentProps<typeof LiveProvider>,
@@ -25,7 +29,7 @@ export const CodeEditor = ({
     <LiveProvider
       theme={themes.vsDark}
       code={code}
-      scope={{ Button, ...scope }}
+      scope={{ Button, Icon, IconButton, ...icons, ...scope }}
       {...others}
     >
       <Tabs className="space-y-md" defaultValue="code">
@@ -35,11 +39,17 @@ export const CodeEditor = ({
         </TabsList>
 
         <TabsContent value="code" forceMount>
-          <LiveEditor size={size} />
+          <div className="relative">
+            <div className="absolute top-md right-md">
+              <CodeCopyButton code={code} />
+            </div>
+
+            <LiveEditor size={size} />
+          </div>
         </TabsContent>
 
         <TabsContent value="preview">
-          <div className="border-sm rounded-md border-neutral">
+          <div className="border-sm rounded-md border-neutral not-prose">
             <LivePreview />
           </div>
         </TabsContent>

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --header-height: 64px;
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline ml-[-1em] pr-[0.5em] w-[80%] cursor-pointer max-w-[700px];
+}
+
+.prose .anchor:hover {
+  @apply visible;
+}
+
+.prose .icon.icon-link:after {
+  @apply text-neutral;
+  content: "#";
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}

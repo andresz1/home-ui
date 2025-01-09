@@ -15,7 +15,7 @@ export const toCSSPropertyPath = (key: string, path: string[] = []) => {
 };
 
 export const toCSSVariableName = (name: string) => {
-  return `--${name}`;
+  return `--${name.replace(/--+/g, "-")}`;
 };
 
 export const toCSSVariable = (name: string) => {

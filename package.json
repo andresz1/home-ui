@@ -1,7 +1,9 @@
 {
   "private": true,
+  "name": "design-system",
   "scripts": {
     "build": "turbo run build",
+    "predev": "turbo build --filter=@adv-re/*",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
@@ -17,7 +19,6 @@
     "prettier": "^3.2.5",
     "turbo": "^2.3.3"
   },
-  "name": "design-system",
   "packageManager": "npm@10.5.1",
   "workspaces": [
     "apps/*",

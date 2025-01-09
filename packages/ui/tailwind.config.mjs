@@ -1,5 +1,5 @@
-import { theme } from "@adv-re/theme";
 import plugins from "@adv-re/tailwind-plugin";
+import { theme } from "@adv-re/theme";
 
 /** @type {import('tailwindcss').Config} */
 const config = {

@@ -9,3 +9,7 @@ export { cva, type VariantProps } from "class-variance-authority";
 export const cn = (...inputs: ClassValue[]) => {
   return cx(inputs);
 };
+
+export const tw = <T>(v: T) => {
+  return v;
+};

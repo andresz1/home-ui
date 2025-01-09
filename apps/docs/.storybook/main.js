@@ -17,8 +17,7 @@ const config = {
 
   core: {},
 
-  async viteFinal(config, { configType }) {
-    // customize the Vite config here
+  async viteFinal(config) {
     return {
       ...config,
       define: { "process.env": {} },
@@ -37,9 +36,8 @@ const config = {
       },
     };
   },
-
   docs: {
-    autodocs: true,
+    autodocs: false,
   },
 };
 

@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@adv-re/ui/button";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -8,6 +8,30 @@ const meta: Meta<typeof Button> = {
       control: { type: "radio" },
       options: ["button", "submit", "reset"],
     },
+    variant: {
+      control: { type: "radio" },
+      options: ["solid", "outlined", "ghost", "contrast"],
+    },
+    size: {
+      control: { type: "radio" },
+      options: ["sm", "md", "lg"],
+    },
+    shape: {
+      control: { type: "radio" },
+      options: ["rounded", "square", "pill"],
+    },
+    disabled: {
+      control: { type: "boolean" },
+    },
+    isLoading: {
+      control: { type: "boolean" },
+    },
+    loadingText: {
+      control: { type: "text" },
+    },
+    loadingLabel: {
+      control: { type: "text" },
+    },
   },
 };
 
@@ -15,22 +39,16 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-/*
- *👇 Render functions are a framework specific feature to allow you control on how the component renders.
- * See https://storybook.js.org/docs/react/api/csf
- * to learn how to use render functions.
- */
 export const Primary: Story = {
-  render: (props) => <Button>Hellox</Button>,
+  render: (props) => <Button {...props} />,
   name: "Button",
   args: {
-    children: "Hello",
+    children: "Contact",
     type: "button",
-    style: {
-      color: "blue",
-      border: "1px solid gray",
-      padding: 10,
-      borderRadius: 10,
-    },
+    variant: "solid",
+    size: "md",
+    shape: "rounded",
+    disabled: false,
+    isLoading: false,
   },
 };

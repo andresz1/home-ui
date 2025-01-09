@@ -2,6 +2,10 @@
 title: Button
 ---
 
+# Button
+
+Button component is used to trigger an action or event, such as submitting a form, opening a Dialog, canceling an action, or performing a delete operation.
+
 ## Install
 
 ```sh
@@ -14,4 +18,86 @@ npm install @spark-ui/button
 import { Button } from "@spark-ui/button";
 ```
 
+## Props
+
+<PropsTable docgen={docgen["Button"]} />
+
+## Usage
+
+### Default
+
 <CodeEditor code={examples.basic} />
+
+### Variant
+
+Use `variant` prop to set the different look and feels of a button.
+
+<CodeEditor code={examples.variant} />
+
+### Disabled
+
+Use `disable` prop to disable the element.
+
+<CodeEditor code={examples.disabled} />
+
+### Icons
+
+Compose the content of the button using the `Icon` component to add an icon to the left or right.
+
+<CodeEditor code={examples.basic} />
+
+### Intent
+
+Use `intent` prop to set the color intent of a button.
+
+<CodeEditor code={examples.intent} />
+
+### Loading
+
+Use the `isLoading` prop to render the button in loading state.
+This will prepend a spinner inside the button.
+
+It preserves the width of your button to avoid content layout shifting.
+
+**a11y tip: use `loadingLabel` to set an accessible aria-label for when the button is in loading state.**
+
+<CodeEditor code={examples.loading} />
+
+#### Loading with text
+
+Alternatively, use `loadingText` if you prefer the loading text to be visible to the user (**Warning: using this might cause layout shifting**)
+
+<CodeEditor code={examples.loadingText} />
+
+### Shapes
+
+Use `shape` prop to set the shape of a button.
+
+<CodeEditor code={examples.shape} />
+
+### Sizes
+
+Use `size` prop to set the size of a button.
+
+<CodeEditor code={examples.size} />
+
+## Advanced usage
+
+### Link
+
+Use `asChild` so that the button takes the html tag and props of its direct child element.
+In this example, if you need your button to be a link.
+
+This polymorphic behaviour can be used with any type of HTML element.
+
+<CodeEditor code={examples.link} />
+
+### Toggle
+
+Use `aria-pressed` to transform the button into a toggle button.
+
+<CodeEditor code={examples.toggle} />
+
+## Accessibility
+
+This component adheres to the [`button` role requirements](https://www.w3.org/WAI/ARIA/apg/patterns/button).

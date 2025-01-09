@@ -1,13 +1,13 @@
-import { theme } from "@adv-re/theme";
+import { theme, darkTheme } from "@adv-re/theme";
 import plugins from "@adv-re/tailwind-plugin";
 import typography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{js,ts,jsx,tsx,mdx}",
     "./../../packages/ui/dist/**/*.{js,mjs}",
   ],
   theme: {
@@ -16,7 +16,7 @@ const config = {
   plugins: [
     ...plugins({
       htmlFontSize: 16,
-      themes: { default: theme },
+      themes: { default: theme, dark: darkTheme },
     }),
     typography,
   ],
